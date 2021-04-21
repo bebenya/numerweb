@@ -2,7 +2,7 @@ import React from 'react'
 import Topbar from './Topbar';
 import Footer from './Footer';
 import '../App.css';
-//import logo from '../logo.svg';
+import logo from '../logo.svg';
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     <div>
         <Topbar />
         <header className="App-header">
-            <img src="http://cs.kmutnb.ac.th/img/Personnel/swk.jpg" className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" />
             <p>
             <div className = "App-link ">Numerical React Project</div> 
             </p>
