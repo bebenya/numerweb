@@ -2,7 +2,7 @@ import React from 'react'
 import Topbar from './Topbar';
 import Footer from './Footer';
 import '../App.css';
-import logo from '../logo.svg';
+//import logo from '../logo.svg';
 
 
 const Home = () => {
