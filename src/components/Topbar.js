@@ -23,7 +23,7 @@ const Topbar = () => {
                     <DropdownToggle color="secondary" caret>
                         Root of Equation
                     </DropdownToggle>
-                    <DropdownMenu >
+                    <DropdownMenu >  
                         <DropdownItem header>Methods</DropdownItem>
                         <DropdownItem href="/Bisection" >Bisection Method</DropdownItem>
                         <DropdownItem href="/FalsePos" >False Position</DropdownItem>
@@ -41,7 +41,7 @@ const Topbar = () => {
                         <DropdownItem header>Methods</DropdownItem>
                         <DropdownItem href="/CramersRule" >Cramer's Rule</DropdownItem>
                         <DropdownItem href="/GaussElimination" >Gauss Elimination</DropdownItem>
-                        <DropdownItem href="/Bisection" >Gauss-Jordan Elimination</DropdownItem>
+                        <DropdownItem href="/GaussJordan" >Gauss-Jordan Elimination</DropdownItem>
                         <DropdownItem href="/Bisection" >Conjugate Gradient</DropdownItem>
                         <DropdownItem href="/Bisection" >Cholesky Decomposition</DropdownItem>
                         <DropdownItem href="/Bisection" >LU Decomposition</DropdownItem>

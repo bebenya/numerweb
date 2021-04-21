@@ -24,11 +24,14 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ec0b4f;
+}
+.App-lung{
+  color:rgb(55, 8, 131)
 }
 
 .nav-color {
-  background-color: rgb(55, 8, 131);
+  background-color: #fd56b8f6;
 }
 
 @keyframes App-logo-spin {
