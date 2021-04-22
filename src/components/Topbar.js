@@ -43,10 +43,11 @@ const Topbar = () => {
                         <DropdownItem href="/GaussElimination" >Gauss Elimination</DropdownItem>
                         <DropdownItem href="/GaussJordan" >Gauss-Jordan Elimination</DropdownItem>
                         <DropdownItem href="/ConjugateGradient" >ConjugateGradient</DropdownItem>
-                        <DropdownItem href="/Bisection" >Cholesky Decomposition</DropdownItem>
+                        <DropdownItem href="/Cholesky" >Cholesky Decomposition</DropdownItem>
                         <DropdownItem href="/Bisection" >LU Decomposition</DropdownItem>
                         <DropdownItem href="/Bisection" >Gauss-Seidel</DropdownItem>
                         <DropdownItem href="/Bisection" >Jacobi's Method</DropdownItem>
+                        
 
                     </DropdownMenu>
                 </Dropdown>
