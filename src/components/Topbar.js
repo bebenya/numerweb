@@ -47,7 +47,6 @@ const Topbar = () => {
                         <DropdownItem href="/LUDecompose" >LU Decomposition</DropdownItem>
                         <DropdownItem href="/GaussSeidel" >Gauss-Seidel</DropdownItem>
                         <DropdownItem href="/Bisection" >Jacobi's Method</DropdownItem>
-
                         
 
                     </DropdownMenu>
