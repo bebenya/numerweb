@@ -45,8 +45,9 @@ const Topbar = () => {
                         <DropdownItem href="/ConjugateGradient" >ConjugateGradient</DropdownItem>
                         <DropdownItem href="/Cholesky" >Cholesky Decomposition</DropdownItem>
                         <DropdownItem href="/LUDecompose" >LU Decomposition</DropdownItem>
-                        <DropdownItem href="/Bisection" >Gauss-Seidel</DropdownItem>
+                        <DropdownItem href="/GaussSeidel" >Gauss-Seidel</DropdownItem>
                         <DropdownItem href="/Bisection" >Jacobi's Method</DropdownItem>
+
                         
 
                     </DropdownMenu>
