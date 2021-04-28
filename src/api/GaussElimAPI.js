@@ -115,6 +115,7 @@ function matrixsubstitution(a, b, update) {
 
 
     console.log(solution);
+	console.log(math.multiply(MatrixA, solution));
     
 
     res.json({

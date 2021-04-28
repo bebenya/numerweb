@@ -43,6 +43,7 @@ router.post("/api/GaussSeidelAPI", (req, res) => {
   }
 
   console.log(solution);
+  console.log(math.multiply(MatrixA, solution));
 
   res.json({
     out: solution,

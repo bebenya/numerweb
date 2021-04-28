@@ -2,38 +2,6 @@ const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
 
-/**
- * @swagger
- *  tags:
- *   name: NewtonRaphsonAPI
- *   description: Get all books
- * 
- */
-
-/**
- * @swagger
- * /api/NewtonRaphsonAPI:
- *   get:
- *     tags: [NewtonRaphsonAPI]
- *     responses:
- *       201:
- *         description: GET
- */
-
- /**
- * @swagger
- * /api/NewtonRaphsonAPI:
- *   post:
- *     parameters:
- *      - name: equation
- *      - name: xl
- *      - name: xr
- *     tags: [NewtonRaphsonAPI]
- *     responses:
- *       201:
- *         description: post data
- */
-
 router.post('/api/NewtonRaphsonAPI', (req, res) => {
     var eq = math.compile(req.body.equation);
     var diffeq = math.derivative(req.body.equation, 'x');
@@ -59,6 +27,8 @@ router.post('/api/NewtonRaphsonAPI', (req, res) => {
         });
         x_old = x_new;
     } while (check > 0.00001 && n < 100)
+
+    console.log(eq.evaluate({x:x_new}));
 
     res.json({
         tmpArr: tmpArr

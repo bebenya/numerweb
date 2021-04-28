@@ -2,38 +2,6 @@ const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
 
-/**
- * @swagger
- *  tags:
- *   name: SecantAPI
- *   description: Get all books
- * 
- */
-
-/**
- * @swagger
- * /api/SecantAPI:
- *   get:
- *     tags: [SecantAPI]
- *     responses:
- *       201:
- *         description: GET
- */
-
- /**
- * @swagger
- * /api/SecantAPI:
- *   post:
- *     parameters:
- *      - name: equation
- *      - name: xl
- *      - name: xr
- *     tags: [SecantAPI]
- *     responses:
- *       201:
- *         description: post data
- */
-
 router.post('/api/SecantAPI', (req, res) => {
     var eq = math.compile(req.body.equation);
     var x0 = parseFloat(req.body.x0);
@@ -69,6 +37,8 @@ router.post('/api/SecantAPI', (req, res) => {
         x1 = x_new;
 
     } while (check > 0.0001);
+
+    console.log(eq.evaluate({x:x_new }));
 
     res.json({
         tmpArr: tmpArr

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const math = require('mathjs');
 
-
 router.post('/api/FalsePosAPI', (req, res) => {
   var eq = math.compile(req.body.equation);
   var xl = parseFloat(req.body.xl);
@@ -21,7 +20,6 @@ router.post('/api/FalsePosAPI', (req, res) => {
   let XM = {
     x: xm
   };
-
 
   const findxm = (xl, xr) => {
     return (parseFloat(xl) * eq.evaluate(XR) - parseFloat(xr) * eq.evaluate(XL)) / (eq.evaluate(XR) - eq.evaluate(XL))
@@ -49,6 +47,8 @@ router.post('/api/FalsePosAPI', (req, res) => {
     });
 
   } while (check > 0.000001 && n < 25)
+
+  console.log(eq.evaluate({x:xm}));
 
   res.json({
     tmpArr: tmpArr
