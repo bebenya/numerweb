@@ -27,8 +27,9 @@ import LUDecompose from './components/LinearAlgebra/LUDecompose';
 import GaussSeidel from './components/LinearAlgebra/GaussSeidel';
 import Jacobi from './components/LinearAlgebra/Jacobi';
 
-class App extends Component {
+import NewtonDivided from './components/Interpolation/NewtonDivided';
 
+class App extends Component {
   render() {
     return (
       <div>
@@ -48,8 +49,7 @@ class App extends Component {
           <Route exact path="/LUDecompose" component={LUDecompose} />
           <Route exact path="/GaussSeidel" component={GaussSeidel} />
           <Route exact path="/Jacobi" component={Jacobi} />
-          
-
+          <Route exact path="/Newton-Divided-Difference" component={NewtonDivided} />
         </BrowserRouter>
         </div>
       </div>

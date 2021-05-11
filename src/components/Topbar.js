@@ -4,7 +4,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import bootstrap components
-import { Nav, Navbar} from 'react-bootstrap'
+import { Nav, Navbar, Button} from 'react-bootstrap'
 import { Dropdown, DropdownMenu , DropdownItem , DropdownToggle} from 'reactstrap';
 
 const Topbar = () => {
@@ -25,7 +25,7 @@ const Topbar = () => {
                     </DropdownToggle>
                     <DropdownMenu >  
                         <DropdownItem header>Methods</DropdownItem>
-                        <DropdownItem href="/Bisection" >Bisection Method</DropdownItem>
+                        <DropdownItem href="/Bisection" >Bisection Method</DropdownItem >
                         <DropdownItem href="/FalsePos" >False Position</DropdownItem>
                         <DropdownItem href="/OnePoint" >One-Point Iteration</DropdownItem>
                         <DropdownItem href="/Secant" >Secant Method</DropdownItem>
@@ -52,8 +52,10 @@ const Topbar = () => {
 
                     </DropdownMenu>
                 </Dropdown>
-            </Nav>
-            
+                <span>&nbsp;&nbsp;</span>
+          <Button color="secondary" href="/Newton-Divided-Difference" >Interpolation - Newton-Divided Difference</Button>
+         </Nav>
+         <Navbar.Brand href="http://localhost:5000/api-docs/">Swagger</Navbar.Brand>
             </Navbar>
             
         </div>
