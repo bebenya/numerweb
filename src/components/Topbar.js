@@ -4,15 +4,17 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 //import bootstrap components
-import { Nav, Navbar, Button} from 'react-bootstrap'
+import { Nav, Navbar} from 'react-bootstrap'
 import { Dropdown, DropdownMenu , DropdownItem , DropdownToggle} from 'reactstrap';
 
 const Topbar = () => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [LinearMenu, setLinearMenuOpen] = useState(false);
+    const [InterpolationMenu, setInterpolationMenuOpen] = useState(false);
     const RootOfEquationToggle = () => setDropdownOpen(prevState => !prevState);
     const LinearMenuToggle = () => setLinearMenuOpen(prevState => !prevState);
+    const InterpolationToggle = () => setInterpolationMenuOpen(prevState => !prevState);
 
     return (
         <div>
@@ -42,18 +44,25 @@ const Topbar = () => {
                         <DropdownItem href="/CramersRule" >Cramer's Rule</DropdownItem>
                         <DropdownItem href="/GaussElimination" >Gauss Elimination</DropdownItem>
                         <DropdownItem href="/GaussJordan" >Gauss-Jordan Elimination</DropdownItem>
-                        <DropdownItem href="/ConjugateGradient" >ConjugateGradient</DropdownItem>
                         <DropdownItem href="/Cholesky" >Cholesky Decomposition</DropdownItem>
                         <DropdownItem href="/LUDecompose" >LU Decomposition</DropdownItem>
                         <DropdownItem href="/GaussSeidel" >Gauss-Seidel</DropdownItem>
                         <DropdownItem href="/Jacobi" >Jacobi's Method</DropdownItem>
-
                         
-
-                    </DropdownMenu>
+                    </DropdownMenu>  
                 </Dropdown>
+                
                 <span>&nbsp;&nbsp;</span>
-          <Button color="secondary" href="/Newton-Divided-Difference" >Interpolation - Newton-Divided Difference</Button>
+                <Dropdown isOpen={InterpolationMenu} toggle={InterpolationToggle}>
+                    <DropdownToggle color="secondary" caret>
+                    Interpolation
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem header>Methods</DropdownItem>
+                        <DropdownItem href="/Newton-Divided-Difference" >Newton-Divided Difference</DropdownItem>
+                        </DropdownMenu>  
+                </Dropdown>
+          
          </Nav>
          <Navbar.Brand href="http://localhost:5000/api-docs/">Swagger</Navbar.Brand>
             </Navbar>
