@@ -128,8 +128,8 @@ export default function FalsePosition() {
                   <p></p>
 
                   {btnState === 0  ? 
-                  <button type="submit" disabled={btnState} value="Submit">Submit</button> :
-                  <button type="submit" disabled={!btnState} value="Submit">Reset</button> }
+                  <button type="submit">Submit</button> :
+                  <button type="submit">Reset</button> }
                 </form>
                 <p></p><p></p>
             <div>

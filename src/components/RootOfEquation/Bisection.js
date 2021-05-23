@@ -10,7 +10,7 @@ import {
 } from 'antd';
 import Axios from 'axios';
 
-
+  
 import '../../App.css';
 import Topbar from '../Topbar';
 import Footer from '../Footer';
@@ -93,6 +93,7 @@ export default function Bisection() {
       .then(res => {
         console.log(res.data.tmpArr);
         newArr = res.data.tmpArr;
+        console.log(newArr)
         setBtnState(1);
       })
       .catch(err => {
@@ -115,7 +116,7 @@ export default function Bisection() {
               <form onSubmit={handleSubmit}>
                   <label>
                     Equation :<span>&nbsp;&nbsp;</span>
-                    <input disabled={btnState} type="text" value={equation} onChange={e => setEquation(e.target.value)}
+                    <input disabled={btnState} type="text" value={equation} onChange={e => {setEquation(e.target.value)}}
                     />
                   </label>
                   <p></p>
@@ -132,8 +133,8 @@ export default function Bisection() {
                   <p></p>
 
                   {btnState === 0  ? 
-                  <button type="submit" disabled={btnState} value="Submit">Submit</button> :
-                  <button type="submit" disabled={!btnState} value="Submit">Reset</button> }
+                  <button type="submit" >Submit</button> :
+                  <button type="submit" >Reset</button> }
                 </form>
                 <p></p><p></p>
             <div>

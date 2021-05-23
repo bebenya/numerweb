@@ -7,7 +7,6 @@ import Topbar from "../Topbar";
 import Footer from "../Footer";
 
 export default function CramersRule() {
-  const [btnState, setBtnState] = useState(false);
   const [output, setOutput] = useState([]);
   const [matrixA, setMatrixA] = useState(
     Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => null))
@@ -23,7 +22,7 @@ export default function CramersRule() {
 
   const initialA = (row, column, event) => {
     let copy = [...matrixA];
-    copy[row][column] = +event.target.value;
+    copy[row][column] = event.target.value;
     setMatrixA(copy);
 
   };
@@ -31,31 +30,19 @@ export default function CramersRule() {
 
   const initialB = (row, column, event) => {
     let copy = [...matrixB];
-    copy[row][column] = +event.target.value;
+    copy[row][column] = event.target.value;
     setMatrixB(copy);
 
   };
 
-
-  const handleSubmit = (e) => {
-    if (btnState === false) {
-      e.preventDefault();
-      cramer();
-      console.log(output);
-    }
-  };
   const cramer = () => {
-
     Axios
       .post("http://localhost:5000/api/CramerAPI", {
         matrixA: matrixA,
         matrixB: matrixB,
       })
       .then(res => {
-
-        setBtnState(true);
         setOutput(res.data.out);
-      
       })
       .catch(err => {
         console.log(err);
@@ -75,7 +62,7 @@ export default function CramersRule() {
           <p></p>
           <div>
           <Row>
-          <Col xs="7">X Matrix
+          <Col xs="7">A Matrix
             <table>
               
               <tbody>
@@ -85,7 +72,6 @@ export default function CramersRule() {
                       <td key={columnIndex}>
                         <input
                           type="number"
-                          disabled={btnState}
                           onChange={(e) =>
                             initialA(rowIndex, columnIndex, e)
                           }
@@ -98,7 +84,7 @@ export default function CramersRule() {
             </table>
             </Col>
             
-            <Col xs="5">Y Matrix
+            <Col xs="5">B Matrix
             <table>
               
               <tbody>
@@ -108,7 +94,6 @@ export default function CramersRule() {
                       <tr key={columnIndex}>
                         <input
                           type="number"
-                          disabled={btnState}
                           onChange={(e) =>
                             initialB(rowIndex, columnIndex, e)
                           }
@@ -123,7 +108,7 @@ export default function CramersRule() {
             </Row>
           </div>
           <p></p>
-          <button value="Submit" disabled={btnState} onClick={handleSubmit}>
+          <button onClick={cramer}>
             Find the Solution
           </button>
 

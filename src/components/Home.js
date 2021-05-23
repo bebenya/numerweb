@@ -2,7 +2,7 @@ import React from 'react'
 import Topbar from './Topbar';
 import Footer from './Footer';
 import '../App.css';
-import logo from '../logo.svg';
+//import logo from '../logo.svg';
 
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     <div>
         <Topbar />
         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src="http://cs.kmutnb.ac.th/img/Personnel/swk.jpg" className="App-logo" alt="logo" />
             <p>
             <div className = "App-link ">Numerical React Project</div> 
             </p>
@@ -23,7 +23,7 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             >
-            Learn React
+            อาจารย์ที่ปรึกษา ผศ. ดร.สุวัจชัย กมลสันติโรจน์
             </a>
         </header>
         <Footer />

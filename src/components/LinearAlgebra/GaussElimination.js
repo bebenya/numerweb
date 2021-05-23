@@ -7,7 +7,6 @@ import Topbar from "../Topbar";
 import Footer from "../Footer";
 
 export default function GaussElimination() {
-  const [btnState, setBtnState] = useState(false);
   const [output, setOutput] = useState([]);
   const [matrixA, setMatrixA] = useState(
     Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => null))
@@ -37,12 +36,6 @@ export default function GaussElimination() {
   };
 
 
-  const handleSubmit = (e) => {
-    if (btnState === false) {
-      e.preventDefault();
-      gauss_elimination();
-    }
-  };
   const gauss_elimination = () => {
 
     Axios
@@ -51,8 +44,6 @@ export default function GaussElimination() {
         matrixB: matrixB,
       })
       .then(res => {
-
-        setBtnState(true);
         setOutput(res.data.out);
       
       })
@@ -84,7 +75,6 @@ export default function GaussElimination() {
                       <td key={columnIndex}>
                         <input
                           type="number"
-                          disabled={btnState}
                           onChange={(e) =>
                             initialA(rowIndex, columnIndex, e)
                           }
@@ -107,7 +97,6 @@ export default function GaussElimination() {
                       <tr key={columnIndex}>
                         <input
                           type="number"
-                          disabled={btnState}
                           onChange={(e) =>
                             initialB(rowIndex, columnIndex, e)
                           }
@@ -122,7 +111,7 @@ export default function GaussElimination() {
             </Row>
           </div>
           <p></p>
-          <button value="Submit" disabled={btnState} onClick={handleSubmit}>
+          <button value="Submit" onClick={gauss_elimination}>
             Find the Solution
           </button>
 
